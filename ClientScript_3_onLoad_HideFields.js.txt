@@ -1,0 +1,15 @@
+// Type: onLoad, Table: Incident
+function onLoad() {
+    var state = g_form.getValue('incident_state');
+    if (state!= '6') {
+        g_form.setDisplay('close_code', false);
+        g_form.setDisplay('close_notes', false);
+    }
+    if (!g_user.hasRole('itil')) {
+        g_form.setReadOnly('priority', true);
+        g_form.setReadOnly('assignment_group', true);
+    }
+    if (g_form.isNewRecord()) {
+        g_form.addInfoMessage('Please fill Category and Short Description - Assignment will be auto-set by Client Script');
+    }
+}

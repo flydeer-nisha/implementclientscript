@@ -1,0 +1,10 @@
+UI POLICY 1: Major Incident Handling
+Table: Incident [incident]
+Name: Major Incident - Show Fields
+CONDITIONS: Major incident checkbox [major_incident] is true OR major_incident_state is Accepted
+ACTIONS:
+1. Field: Major incident state - Visible: true, Mandatory: true
+2. Field: Parent Incident - Visible: true
+3. Field: Business impact - Visible: true, Mandatory: true
+4. Field: Business criticality - Visible: true, Mandatory: true
+REVERSE IF FALSE: true, Order: 100

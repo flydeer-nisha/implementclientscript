@@ -1,0 +1,16 @@
+TESTING STEPS:
+
+CLIENT SCRIPT TEST:
+1. All -> Incidents -> Create New
+2. Change Category to Hardware -> Check Assignment Group auto-changes to Hardware
+3. Change Urgency to 1-High -> Check Error Message and Priority mandatory
+4. Try to save with Short Description "Hi" -> Should block
+5. Reload form -> Check Close Code hidden for New state
+
+UI POLICY TEST:
+1. Major Incident checkbox = true -> Verify Major Incident State, Business Impact visible
+2. Uncheck Major Incident -> Verify fields hide again
+3. Set Category = Hardware -> Verify Subcategory mandatory and CI field shows
+4. Change Category to Software -> Verify mandatory removed
+5. Set State = Resolved -> Verify Close Code, Close Notes appear and Category readonly
+

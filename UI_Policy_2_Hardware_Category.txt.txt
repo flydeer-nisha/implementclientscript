@@ -1,0 +1,13 @@
+UI POLICY 2: Hardware Category Handling
+Table: Incident [incident]
+Name: Hardware - Subcategory Mandatory
+CONDITIONS: Category [category] is Hardware
+ACTIONS:
+1. Field: Subcategory [subcategory] - Mandatory: true, Visible: true
+2. Field: Configuration item [cmdb_ci] - Visible: true, Mandatory: true
+3. Field: Location [location] - Visible: true
+4. Field: Assignment group - Mandatory: true, Value: Hardware
+SCRIPT:
+function onCondition() { g_form.setValue('priority', '3'); g_form.setMandatory('cmdb_ci', true); }
+function onReverse() { g_form.setMandatory('cmdb_ci', false); }
+REVERSE IF FALSE: true, Order: 200

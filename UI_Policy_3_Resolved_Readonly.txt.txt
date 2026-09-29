@@ -1,0 +1,12 @@
+UI POLICY 3: Resolved State - Readonly Fields
+Table: Incident [incident]
+Name: On Resolved - Make Fields Readonly and Show Close Fields
+CONDITIONS: Incident state [incident_state] is Resolved OR Closed
+ACTIONS:
+1. Category - ReadOnly: true
+2. Subcategory - ReadOnly: true
+3. Assignment group - ReadOnly: true
+4. Short description - ReadOnly: true
+5. Close code - Visible: true, Mandatory: true
+6. Close notes - Visible: true, Mandatory: true
+REVERSE IF FALSE: true, Order: 300

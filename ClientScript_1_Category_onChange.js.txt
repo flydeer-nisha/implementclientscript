@@ -1,0 +1,23 @@
+// Client Script: Incident - Category onChange
+// Type: onChange, Table: Incident, Field: category
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+   if (newValue == 'Hardware') {
+       g_form.setValue('assignment_group', 'Hardware');
+       g_form.setValue('subcategory', 'Laptop');
+       g_form.addInfoMessage('Category is Hardware - Assigned to Hardware Group');
+   }
+   else if (newValue == 'Software') {
+       g_form.setValue('assignment_group', 'Software');
+       g_form.setValue('subcategory', 'Access');
+   }
+   else if (newValue == 'Network') {
+       g_form.setValue('assignment_group', 'Network');
+       g_form.setValue('subcategory', 'Wireless');
+   }
+   else if (newValue == 'Inquiry / Help') {
+       g_form.setValue('assignment_group', 'Service Desk');
+   }
+}

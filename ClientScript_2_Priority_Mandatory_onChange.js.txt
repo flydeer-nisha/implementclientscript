@@ -1,0 +1,21 @@
+// Type: onChange, Table: Incident, Field: urgency
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue == '') {
+      return;
+   }
+   if (newValue == '1') {
+       g_form.setMandatory('priority', true);
+       g_form.setMandatory('impact', true);
+       g_form.addErrorMessage('Urgency is High - Please set Impact and Priority correctly!');
+   }
+}
+
+// SECOND SCRIPT - Short Description Validation - Type: onSubmit, Table: Incident
+function onSubmit() {
+   var shortDesc = g_form.getValue('short_description');
+   if (shortDesc.length < 10) {
+       g_form.addErrorMessage('Short Description must be at least 10 characters. Please describe the issue properly.');
+       return false;
+   }
+   return true;
+}
